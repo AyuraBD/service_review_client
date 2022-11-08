@@ -1,0 +1,11 @@
+form{
+    padding:50px 0px;
+}
+.form-btn{
+    margin:auto;
+    text-align: center;
+}
+.form-btn .btn{
+    padding:8px 35px;
+    margin-top: 30px;
+}
