@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import Servicehome from './Servicehome';
 import aboutimg from '../../assets/img/about.jpg';
+import aboutus from '../../assets/img/aboutus.jpg';
 
 
 const Home = () => {
@@ -51,7 +52,22 @@ const Home = () => {
                 </div>
             </div>
             <div className="aboutus">
-                
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="left">
+                            <h6 className='fw-bold head-key'>About Us</h6>
+                                <h1 className='fw-bold mb-3'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi reiciendis nam id praesentium deserunt minima minus, dolorem impedit quae dolore? Iste ipsum odit aliquid, molestias illum nisi reprehenderit error quasi. Excepturi reiciendis nam id praesentium deserunt minima minus, dolorem impedit quae dolore? Iste ipsum odit aliquid, molestias illum nisi reprehenderit error quasi.</p>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="right">
+                                <img className='img-fluid' src={aboutus} alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="chooseus py-5">
                 <div className="container">

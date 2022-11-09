@@ -54,7 +54,13 @@
     font-weight: 700;
     margin-bottom: 10px;
 }
-
+.aboutus .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: right;
+}
 .chooseus .right{
     display: flex;
     flex-direction: column;
