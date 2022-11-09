@@ -23,13 +23,15 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/servicesall">services</Nav.Link>
-                            <Nav.Link href="/blog">Blog</Nav.Link>
-                            <Nav.Link href="/reviews">Reviews</Nav.Link>
+                            <Nav.Link href="/blog">Blog</Nav.Link>    
+
                         </Nav>
                         <Nav>
                             {
                                 user?.email ?
                                 <>
+                                    <Nav.Link href="/reviews">Reviews</Nav.Link>
+                                    <Nav.Link href="/addService">Add Service</Nav.Link>
                                     <Nav.Link>{user.email}</Nav.Link>
                                     <Nav.Link onClick={handleLogOut} className="bg-danger text-white font-bold btn">Log out</Nav.Link>
                                 </>
