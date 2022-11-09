@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ServicesCard from './ServicesCard';
 
 const Servicesall = () => {
     const [services, setServices] = useState([]);
@@ -12,13 +13,18 @@ const Servicesall = () => {
             })
     }, [])
     return (
-        <div>
-            <h1>Services</h1>
+        <div>  
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-4">
-                        <h2>{services.length}</h2>
+                    <div className="service-heading mt-5 mb-3">
+                        <h1 className='text-center'>Here our all services</h1>
                     </div>
+                    {
+                        services.map(service => <ServicesCard
+                            key={service._id}
+                            service={service}
+                        ></ServicesCard>)
+                    }
                 </div>
             </div>
         </div>

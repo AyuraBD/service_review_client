@@ -6,7 +6,7 @@
     background-size: cover;
 }
 .banner .overlay{
-    background-color: rgb(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     width:100%;
     height:100%;
     display: flex;
@@ -14,6 +14,7 @@
     align-items: center;
     justify-content: center;
     color:#ffffff;
+    text-align: center;
 }
 .banner .overlay h1{
     font-size:70px;
@@ -40,6 +41,10 @@
 .services{
     padding:100px 0px;
 }
+.services button a{
+    color:#ffffff;
+    text-decoration: none;
+}
 .heading{
     margin-bottom: 50px;
 }
@@ -48,4 +53,37 @@
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 10px;
+}
+
+.chooseus .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.chooseus .left{
+    text-align: right;
+}
+.right .head-key{
+    position: relative;
+}
+.right .head-key:after{
+    width:20%;
+    content:'';
+    height:2px;
+    background-color: aqua;
+    position: absolute;
+    bottom: -5px;
+    left:0;
+}
+.keys{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:30px;
+    width:60%;
+}
+.keys li{
+    font-size:20px;
+    list-style: none;
+    font-weight: 600;
 }
