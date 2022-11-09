@@ -27,7 +27,7 @@ const Signup = () => {
                     <div className="form-heading">
                         <h3 className='text-center'>Sign Up</h3>
                     </div>
-                    <form onSubmit={handleSignup}>
+                    <form className='signup-form' onSubmit={handleSignup}>
                         <div className="mb-3">
                             <label className="form-label">Email address</label>
                             <input type="text" name='name' placeholder='Your name' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>

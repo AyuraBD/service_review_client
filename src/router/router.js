@@ -7,6 +7,8 @@ import Notfound from "../Pages/Notfound/Notfound";
 import Details from "../Pages/Services/Details/Details";
 import Servicesall from "../Pages/Services/Servicesall";
 import Signup from "../Pages/Signup/Signup";
+import Reviews from "../Pages/Reviews/Reviews";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -37,7 +39,11 @@ const router = createBrowserRouter([
             {
                 path:'/details/:id',
                 element:<Details></Details>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({params}) => fetch(`https://cleaning-service-server.vercel.app/services/${params.id}`),
+            },
+            {
+                path:'/reviews',
+                element: <PrivateRoute><Reviews></Reviews></PrivateRoute>
             },
             {
                 path:'*',
