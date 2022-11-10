@@ -3,6 +3,7 @@ import './Signup.css';
 
 import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
     useTitle('SignUp');
@@ -48,8 +49,9 @@ const Signup = () => {
                         </div>
                         <p className='text-center text-danger mt-3'>{error}</p>
                         <div className="signup text-center">
-                         <button type="submit" className="btn btn-primary px-5">Sign Up</button>
-                        </div>                        
+                            <button type="submit" className="btn btn-primary mt-3 px-5">Sign Up</button>
+                        </div> 
+                        <p className='text-center mt-3'>Already have an account? <Link to='/login'>Login</Link></p>                       
                     </form>
                 </div>
             </div>

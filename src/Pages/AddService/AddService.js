@@ -46,20 +46,20 @@ const AddService = () => {
 					<Form onSubmit={handleAddService}>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
 							<Form.Label>Service Name</Form.Label>
-							<Form.Control type="text" name="name" placeholder="Service name" />
+							<Form.Control type="text" name="name" placeholder="Service name" required/>
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
 							<Form.Label>Price</Form.Label>
-							<Form.Control type="text" name="price" placeholder="Price" />
+							<Form.Control type="text" name="price" placeholder="Price" required/>
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
 							<Form.Label>Service description</Form.Label>
-							<Form.Control type="text" name="about" placeholder="Service Description" />
+							<Form.Control type="text" name="about" placeholder="Service Description" required/>
 						</Form.Group>
 
 						<Form.Group className="mb-3" controlId="formBasicPassword">
 							<Form.Label> Service Image URL</Form.Label>
-							<Form.Control type="text" name="img" placeholder="Your Image URL" />
+							<Form.Control type="text" name="img" placeholder="Your Image URL" required/>
 						</Form.Group>
 
 						<Button variant="primary" type="submit">
