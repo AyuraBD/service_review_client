@@ -34,7 +34,7 @@ const Reviews = () => {
         }
     }
     return (
-        <div className='container my-5'>
+        <div className='container my-5' style={{paddingTop:'60px', paddingBottom:'60px',}}>
             <div className="row">
                 <h2 className='mb-5'>You have {reviews.length} reviews</h2>
                 <div className="reviews">

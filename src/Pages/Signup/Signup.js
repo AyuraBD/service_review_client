@@ -49,8 +49,7 @@ const Signup = () => {
                         <p className='text-center text-danger mt-3'>{error}</p>
                         <div className="signup text-center">
                          <button type="submit" className="btn btn-primary px-5">Sign Up</button>
-                        </div>
-                        
+                        </div>                        
                     </form>
                 </div>
             </div>

@@ -71,21 +71,21 @@ const Details = () => {
 							<Form onSubmit={handlePostReview}>
 								<Form.Group className="mb-3" controlId="formBasicEmail">
 									<Form.Label>Your Name</Form.Label>
-									<Form.Control type="text" name="name" placeholder="Your Name" />
+									<Form.Control type="text" name="name" placeholder="Your Name" required/>
 								</Form.Group>
 
 								<Form.Group className="mb-3" controlId="formBasicPassword">
 									<Form.Label>Image URL</Form.Label>
-									<Form.Control type="text" name='img' placeholder="Your Image URL" />
+									<Form.Control type="text" name='img' placeholder="Your Image URL" required/>
 								</Form.Group>
 								<FloatingLabel className="mb-3" controlId="floatingTextarea2" label="Write your Comments here">
 									<Form.Control
 										as="textarea"
-										placeholder="Leave a comment here" name='message'
+										placeholder="Leave a comment here" name='message' required
 										style={{ height: '120px' }}
 									/>
 								</FloatingLabel>
-								<Button variant="primary" type="submit">
+								<Button variant="primary" type="submit" disabled={!user ? true : false}>
 									Post your review
 								</Button>
 							</Form>
