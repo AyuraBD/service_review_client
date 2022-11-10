@@ -52,7 +52,7 @@ const Login = () => {
                         <div className="login text-center mb-4">
                             <button type="submit" className="btn btn-primary px-5">Login</button>
                         </div>
-                        <p>Don't have an account <Link to='/signup'>Sign Up</Link></p>
+                        <p className='text-center'>Don't have an account <Link to='/signup'>Sign Up</Link></p>
                         <div className="social text-center">
                         <button onClick={googleLogin} className="btn btn-warning px-5">Google</button>
                         </div>
