@@ -39,7 +39,6 @@ const Details = () => {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data);
 			if(data.acknowledged){
 				alert("Your review posted successfully");
 				form.reset();

@@ -14,7 +14,6 @@ const Reviews = () => {
         fetch(`https://cleaning-service-server.vercel.app/reviews/`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setReviews(data);
             })
     }, [])
@@ -26,7 +25,6 @@ const Reviews = () => {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if(data.deletedCount > 0){
                     alert('Review deleted successfully');
                     const remaining = reviews.filter(review => review._id !== id);
