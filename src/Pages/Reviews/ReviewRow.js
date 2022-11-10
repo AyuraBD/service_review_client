@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReviewRow = ({ review, deleteReview }) => {
+const ReviewRow = ({ review, deleteReview, handleUpdate }) => {
     const { _id, image, reviewer, serviceName, message } = review;
     return (
         <div>
@@ -10,7 +10,7 @@ const ReviewRow = ({ review, deleteReview }) => {
                         <h4 className='me-4' style={{ cursor: 'pointer' }}>X</h4>
                     </div>
                     <div className="middle" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width:"80%"}}>
-                        <div className="left" style={{ display: 'flex', alignItems: 'center' }}>
+                        <div className="left" style={{ display: 'flex', alignItems: 'center', width:'30%'}}>
                             <div className="img">
                                 <img style={{ width: '50px', height: '50px', borderRadius: '50%' }} src={image} alt="" />
                             </div>
@@ -19,14 +19,14 @@ const ReviewRow = ({ review, deleteReview }) => {
                             </div>
                         </div>
 
-                        <div className="review-right">
-                            <h5 className='mb-3 mt-3'>{serviceName}</h5>
-                            <p>{message}</p>
+                        <div className="review-right" style={{width:'70%', display:'flex', alignItems:'center'}}>
+                            <input type="text" className='me-3' placeholder={serviceName} />
+                            <textarea name="" id="" cols="60" rows="3" placeholder={message}></textarea>
                         </div>
 
                     </div>
                     <div className="right ms-5">
-                        <button>Update</button>
+                        <button onClick={() => handleUpdate(_id)} className='btn btn-primary'>Update</button>
                     </div>
                 </div>
             </div>

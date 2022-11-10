@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import useTitle from '../../../hooks/useTitle';
 import { AuthContext } from '../../../Context/AuthProvider';
 
@@ -85,9 +85,12 @@ const Details = () => {
 										style={{ height: '120px' }}
 									/>
 								</FloatingLabel>
-								<Button variant="primary" type="submit" disabled={!user ? true : false}>
+								{
+									!user ? <p className='text-danger'>Please login to post a review <Link to='/login'>Login</Link></p> : <Button variant="primary" type="submit">
 									Post your review
 								</Button>
+								}
+								
 							</Form>
 						</div>
 					</div>
