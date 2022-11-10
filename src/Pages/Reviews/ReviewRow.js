@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ReviewRow = ({ review }) => {
-    const { image, reviewer, serviceName, message } = review;
+const ReviewRow = ({ review, deleteReview }) => {
+    const { _id, image, reviewer, serviceName, message } = review;
     return (
-        <div>
+        <div style={{height:'80vh',}}>
             <div className="reviewRow" style={{border: '1px solid gray', borderRadius: '20px', padding: '20px' }}>
                 <div className="review-top" style={{ display: 'flex', alignItems: 'center', justifyContent:'space-between', borderBottom:'1px solid lightGray', paddingBottom:'10px'}}>
                     <div className="left" style={{ display: 'flex', alignItems: 'center'}}>
-                        <div className="close">
+                        <div onClick={() => deleteReview(_id)} className="close">
                             <h4 className='me-4' style={{ cursor: 'pointer' }}>X</h4>
                         </div>
                         <div className="img">

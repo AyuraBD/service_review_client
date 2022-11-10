@@ -6,7 +6,7 @@ import ReviewRow from './ReviewRow';
 
 const Reviews = () => {
     const { user } = useContext(AuthContext);
-    const [reviews, serReviews] = useState([]);
+    const [reviews, setReviews] = useState([]);
     console.log(reviews);
     useTitle('Reviews');
 
@@ -15,9 +15,26 @@ const Reviews = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                serReviews(data);
+                setReviews(data);
             })
     }, [])
+    const deleteReview = id =>{
+        const proceed = window.confirm("Are you sure to delete the review?");
+        if(proceed){
+            fetch(`https://cleaning-service-server.vercel.app/reviews/${id}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0){
+                    alert('Review deleted successfully');
+                    const remaining = reviews.filter(review => review._id !== id);
+                    setReviews(remaining);
+                }
+            })
+        }
+    }
     return (
         <div className='container my-5'>
             <div className="row">
@@ -27,6 +44,7 @@ const Reviews = () => {
                         reviews.map(review =><ReviewRow
                             key={review._id}
                             review={review}
+                            deleteReview={deleteReview}
                         ></ReviewRow>)
                     }
                 </div>
