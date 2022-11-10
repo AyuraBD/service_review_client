@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../../hooks/useTitle';
@@ -6,6 +6,7 @@ import useTitle from '../../hooks/useTitle';
 const Login = () => {
     useTitle('LogIn');
     const {logIn, googleSignin, loading} = useContext(AuthContext);
+    const [error, setError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
@@ -24,7 +25,10 @@ const Login = () => {
             navigate(from, {replace:true});
             loading(true);
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            console.log(err)
+            setError(err.message);
+        })
     }
 
     const googleLogin = () =>{
@@ -36,7 +40,7 @@ const Login = () => {
         .catch(err => console.log(err))
     }
     return (
-        <div>
+        <div style={{height:'80vh'}}>
             <div className='container py-5'>
             <div className="row">
                 <div className="col-lg-6 offset-lg-3">
@@ -55,6 +59,7 @@ const Login = () => {
                         <div className="login text-center mb-4">
                             <button type="submit" className="btn btn-primary px-5">Login</button>
                         </div>
+                        <p className='text-danger text-center'>{error}</p>
                         <p className='text-center'>Don't have an account <Link to='/signup'>Sign Up</Link></p>
                         <div className="social text-center">
                         <button onClick={googleLogin} className="btn btn-warning px-5">Google</button>

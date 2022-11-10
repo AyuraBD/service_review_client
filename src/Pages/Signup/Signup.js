@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Signup.css';
 
 import { AuthContext } from '../../Context/AuthProvider';
@@ -7,6 +7,7 @@ import useTitle from '../../hooks/useTitle';
 const Signup = () => {
     useTitle('SignUp');
     const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
     const handleSignup = e => {
         e.preventDefault();
@@ -20,7 +21,10 @@ const Signup = () => {
             const user = result.user;
             console.log(user);
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            console.log(err)
+            setError(err.message);
+        })
     }
     return (
         <div className='container py-5'>
@@ -42,9 +46,11 @@ const Signup = () => {
                             <label className="form-label">Password</label>
                             <input type="password" name="password" className="form-control" placeholder='Password' id="exampleInputPassword1"/>
                         </div>
+                        <p className='text-center text-danger mt-3'>{error}</p>
                         <div className="signup text-center">
                          <button type="submit" className="btn btn-primary px-5">Sign Up</button>
                         </div>
+                        
                     </form>
                 </div>
             </div>
