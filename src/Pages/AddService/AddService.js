@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
+	useTitle('AddService');
 
 	const handleAddService = e => {
 		e.preventDefault();
@@ -18,7 +19,7 @@ const AddService = () => {
 			about,
 			img
 		}
-		fetch('http://localhost:5000/services', {
+		fetch('https://cleaning-service-server.vercel.app/services', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'

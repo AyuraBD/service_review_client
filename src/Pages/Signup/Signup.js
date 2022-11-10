@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import './Signup.css';
 
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Signup = () => {
+    useTitle('SignUp');
     const { createUser } = useContext(AuthContext);
 
     const handleSignup = e => {

@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import ServicesCard from './ServicesCard';
 
 const Servicesall = () => {
+    useTitle('ServiceAll');
     const [services, setServices] = useState([]);
     const { loading} = useContext(AuthContext);
 

@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
-    const {logIn, googleSignin} = useContext(AuthContext);
+    useTitle('LogIn');
+    const {logIn, googleSignin, loading} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
@@ -19,7 +21,8 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
-            navigate(from, {replace:true})
+            navigate(from, {replace:true});
+            loading(true);
         })
         .catch(err => console.log(err))
     }

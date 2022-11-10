@@ -5,9 +5,11 @@ import './Home.css';
 import Servicehome from './Servicehome';
 import aboutimg from '../../assets/img/about.jpg';
 import aboutus from '../../assets/img/aboutus.jpg';
+import useTitle from '../../hooks/useTitle';
 
 
 const Home = () => {
+    useTitle('Home');
     const [services, setServices] = useState([]);
 
     useEffect(() => {
